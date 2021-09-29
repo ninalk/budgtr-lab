@@ -19,8 +19,7 @@ app.get('/budgets', (req, res) => {
     Budget.forEach(function(budget) {
         bankAccount += Number(budget.amount);
     })
-    console.log(bankAccount)
-    
+
     res.render('index.ejs', {
         allBudgets: Budget,
         bankAccount,
