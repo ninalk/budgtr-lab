@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Skeleton-2.0.4/css/normalize.css" />
+    <link rel="stylesheet" href="/Skeleton-2.0.4/css/skeleton.css" />
+    <title>BUDGETS LAB</title>
+</head>
+<body>
+    <div class="container">
+        <h1>All Budgets</h1>
+        <a href="/budgets/new">Add a new budget</a>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Name</th>
+                <th>From</th>
+                <th>Amount</th>
+            </tr>
+            <% for (let i = 0; i < allBudgets.length; i++) { %>
+            <tr>
+                <td><%= allBudgets[i].date %></td>
+                <td><a href="/budgets/<%= i %>"><%= allBudgets[i].name %></a></td>
+                <td><%= allBudgets[i].from %></td>
+                <td><%= allBudgets[i].amount %></td>
+            </tr>
+            <% } %>
+        </table>
+    </div>
+
+</body>
+</html>
