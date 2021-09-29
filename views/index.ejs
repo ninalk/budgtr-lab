@@ -30,6 +30,25 @@
             <% } %>
         </table>
     </div>
-
+    <% if ( bankAccount < 0 ) { %>
+        <style type="text/css">
+            body {
+                background-color: red;
+            }
+        </style>
+    <% } else if (bankAccount > 1000) { %>
+        <style type="text/css">
+            body {
+                background-color: green;
+            }
+        </style>
+    <% } else { %>
+        <style type="text/css">
+            body {
+                background-color: rgb(86, 86, 177);
+            }
+        </style>
+    <% } %>
+    
 </body>
 </html>
