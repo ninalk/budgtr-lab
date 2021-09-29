@@ -5,14 +5,25 @@ const app = express()
 
 const Budget = require('./models/budget.js')
 
+
+
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(logger('dev'));
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
 app.get('/budgets', (req, res) => {
+    
+    // calculate total in bank account
+    let bankAccount = 0;
+    Budget.forEach(function(budget) {
+        bankAccount += Number(budget.amount);
+    })
+    console.log(bankAccount)
+    
     res.render('index.ejs', {
         allBudgets: Budget,
+        bankAccount,
     })
 })
 
